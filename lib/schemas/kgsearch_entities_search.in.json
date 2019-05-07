@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "indent": {
+            "type": "boolean"
+        },
+        "languages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "limit": {
+            "type": "integer"
+        },
+        "prefix": {
+            "type": "boolean"
+        },
+        "query": {
+            "type": "string"
+        },
+        "types": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        }
+    }
+}

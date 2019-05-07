@@ -1,0 +1,51 @@
+{
+    "title": "Knowledge Graph Search",
+    "description": "Searches the Google Knowledge Graph for entities.",
+    "docsUrl": "https://developers.google.com/knowledge-graph/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/kgsearch/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://kgsearch.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "kgsearch_entities_search": {
+            "main": "./lib/actions/kgsearch_entities_search.js",
+            "title": "Searches Knowledge Graph for entities that match the constraints.\nA list of matched entities will be returned in response, which will be in\nJSON-LD format and compatible with http://schema.org",
+            "description": "Searches Knowledge Graph for entities that match the constraints.\nA list of matched entities will be returned in response, which will be in\nJSON-LD format and compatible with http://schema.org",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/kgsearch_entities_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
